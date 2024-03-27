@@ -1,32 +1,28 @@
 package com.java.restApi.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="userData")
 public class Users {
 
-    private String userID;
+    @Id
     private String userName;
-    private String userSurname;
-    private String userEmail;
-    private String userTasks;
+    private String firstName;
+    private String lastName;
 
 
     public Users() {
     }
 
-    public Users(String userID, String userName, String userSurname, String userEmail, String userTasks) {
-        this.userID = userID;
+    public Users(String userName, String firstName, String lastName) {
         this.userName = userName;
-        this.userSurname = userSurname;
-        this.userEmail = userEmail;
-        this.userTasks = userTasks;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public String getUserID() {
-        return userID;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
 
     public String getUserName() {
         return userName;
@@ -36,27 +32,20 @@ public class Users {
         this.userName = userName;
     }
 
-    public String getUserSurname() {
-        return userSurname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setUserSurname(String userSurname) {
-        this.userSurname = userSurname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-    public String getUserTasks() {
-        return userTasks;
-    }
-
-    public void setUserTasks(String userTasks) {
-        this.userTasks = userTasks;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
 }

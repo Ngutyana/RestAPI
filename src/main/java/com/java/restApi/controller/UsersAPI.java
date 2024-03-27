@@ -4,21 +4,17 @@ import  com.java.restApi.model.Users;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/users")
 public class UsersAPI
 {
     Users users;
 
-    @GetMapping("{userID}")  //getting user data using userID(unique)
+    @GetMapping("{userName}")  //getting user data using userID(unique)
     public Users getUserData(String userID)
     {
-        return users;
+        return //users;
 
-                /*new Users("01",
-                "Unathi",
-                "Ngutyana",
-                "ungutyana@gmail.com",
-                "xxx");*/
+                new Users("jsmith", "John", "Smith");
     }
 
     @PostMapping  //creating new user data
@@ -34,7 +30,7 @@ public class UsersAPI
         return "User data updated successfully";
     }
 
-    @DeleteMapping("{userID}")  //deleting a user
+    @DeleteMapping("{userName}")  //deleting a user
     public String deleteUserData(String userID)
     {
         this.users = null;
